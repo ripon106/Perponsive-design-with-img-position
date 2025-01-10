@@ -25,6 +25,47 @@ img{
 }
 
 
+.header, .nav, .main, .slider, .advertise, .footer{
+    border: 1px solid red;
+    margin: 5px;
+}
+
+.header{
+    grid-area: header;
+    background-color: aqua;
+}
+.nav{
+    grid-area: nav;
+    background-color: rgb(204, 204, 204);
+}
+.main{
+    grid-area: main;
+    background-color: rgb(23, 0, 155);
+}
+.slider{
+    grid-area: slider;
+    background-color: rgb(217, 255, 0);
+}
+.advertise{
+    grid-area: advertise;
+    background-color: rgb(0, 61, 85);
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(248, 216, 216);
+}
+
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "nav main main slider"
+    "nav main main advertise"
+    "footer footer footer footer"
+    ;
+}
+
 
 /* responsive for small device */
 
@@ -38,6 +79,18 @@ img{
         grid-template-columns: repeat(1, 1fr);
         
     }
+    .container{
+        grid-template-areas: 
+        "header header header header"
+    "nav nav nav nav"
+    "main main main main"
+    "slider slider slider slider"
+    "advertise advertise advertise advertise"
+    "footer footer footer footer"
+        ;
+       
+
+    }
     
 }
 
@@ -47,5 +100,15 @@ img{
         flex-direction: column;
         height: auto; /* i have fixed row's height above. so, the picture is overflow. here fixed it*/
     
+    }
+
+    .container{
+        grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        "slider main main main"
+        "advertise footer footer footer"
+        ;
+
     }
 }
